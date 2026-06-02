@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim TopUp - Platform Top Up Game Tercepat & Terpercaya</title>
+    <link rel="stylesheet" href="TopUp.css">
+</head>
+<body>
+
+    <div id="toast" class="toast hidden">Harap lengkapi semua data terlebih dahulu</div>
+
+    <div id="loading-screen" class="loading-overlay hidden">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Memproses Pembayaran...</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmation-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <h3>Konfirmasi Pesanan</h3>
+            <div class="modal-body">
+                <p><strong>Game:</strong> <span id="md-game">-</span></p>
+                <p><strong>User ID:</strong> <span id="md-uid">-</span></p>
+                <p><strong>Zone ID:</strong> <span id="md-zid">-</span></p>
+                <p><strong>Nominal:</strong> <span id="md-nominal">-</span></p>
+                <p><strong>Metode Pembayaran:</strong> <span id="md-payment">-</span></p>
+            </div>
+            <div class="modal-actions">
+                <button id="btn-modal-cancel" class="btn btn-secondary">Batal</button>
+                <button id="btn-modal-confirm" class="btn btn-primary">Konfirmasi</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Ibrahim TopUp</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#game-section" class="nav-link">Game</a></li>
+                <li><a href="#features-section" class="nav-link">Promo</a></li>
+                <li><a href="#footer" class="nav-link">Tentang</a></li>
+                <li><a href="#footer" class="nav-link">Kontak</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+            <div class="hero-content fade-up">
+                <h1>Top Up Game <span class="text-gradient">Murah, Cepat & Aman</span></h1>
+                <p>Proses instan, pembayaran aman, dan harga terbaik untuk semua game favoritmu.</p>
+                <div class="hero-buttons">
+                    <a href="#game-section" class="btn btn-primary">Mulai Top Up</a>
+                    <a href="#features-section" class="btn btn-outline">Lihat Game</a>
+                </div>
+            </div>
+            <a href="#features-section" class="scroll-indicator">
+                <span></span>
+            </a>
+        </section>
+
+        <section class="progress-section container">
+            <div class="progress-steps">
+                <div class="step active" id="step-1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Pilih Game</div>
+                </div>
+                <div class="step" id="step-2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Isi Data</div>
+                </div>
+                <div class="step" id="step-3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Pembayaran</div>
+                </div>
+                <div class="step" id="step-4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Selesai</div>
+                </div>
+            </div>
+        </section>
+
+        <div id="main-app-container">
+            
+            <div id="selection-page" class="page-view active">
+                <section id="features-section" class="features container fade-up">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Proses Instan</h3>
+                        <p>Pesanan Anda diproses secara otomatis dalam hitungan detik.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Aman & Terpercaya</h3>
+                        <p>Sistem enkripsi end-to-end menjaga data akun Anda tetap aman.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h3>Harga Murah</h3>
+                        <p>Dapatkan penawaran harga terbaik dan promo menarik setiap hari.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Banyak Pilihan Game</h3>
+                        <p>Tersedia berbagai macam opsi game populer di Indonesia.</p>
+                    </div>
+                </section>
+
+                <section id="game-section" class="search-container container fade-up">
+                    <div class="search-wrapper">
+                        <input type="text" id="search-input" placeholder="Cari game favoritmu...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                </section>
+
+                <section class="games-grid container fade-up" id="games-grid">
+                    </section>
+            </div>
+
+            <div id="transaction-page" class="page-view hidden">
+                <section class="topup-form-section container">
+                    <button id="btn-back-to-games" class="btn btn-outline" style="margin-bottom: 1.5rem;">← Kembali Pilih Game</button>
+                    
+                    <div class="form-layout">
+                        <div class="form-card glass">
+                            <div class="form-section-title">
+                                <span class="num">1</span>
+                                <h3>Data Akun Game</h3>
+                            </div>
+                            <div class="input-group">
+                                <label for="form-game-name">Game Terpilih</label>
+                                <input type="text" id="form-game-name" readonly>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label for="form-user-id">User ID</label>
+                                    <input type="text" id="form-user-id" placeholder="Masukkan User ID">
+                                </div>
+                                <div class="input-group" id="zone-id-wrapper">
+                                    <label for="form-zone-id">Zone ID (Opsional)</label>
+                                    <input type="text" id="form-zone-id" placeholder="Zone ID">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-card glass">
+                            <div class="form-section-title">
+                                <span class="num">2</span>
+                                <h3>Pilih Nominal</h3>
+                            </div>
+                            <div class="nominal-grid" id="nominal-grid">
+                                </div>
+                        </div>
+
+                        <div class="form-card glass">
+                            <div class="form-section-title">
+                                <span class="num">3</span>
+                                <h3>Metode Pembayaran</h3>
+                            </div>
+                            <div class="payment-grid" id="payment-grid">
+                                </div>
+                            
+                            <button id="btn-submit-order" class="btn btn-primary btn-block" style="margin-top: 2rem; width: 100%;">Bayar Sekarang</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="success-page" class="page-view hidden">
+                <section class="success-section container">
+                    <div class="success-card glass">
+                        <div class="success-icon">✓</div>
+                        <h2>Pembelian Berhasil</h2>
+                        <p class="trx-id" id="success-trx-id">TRX-XXXXXXXX</p>
+                        
+                        <div class="invoice-details">
+                            <div class="invoice-item"><span>Game</span><strong id="inv-game">-</strong></div>
+                            <div class="invoice-item"><span>User ID</span><strong id="inv-uid">-</strong></div>
+                            <div class="invoice-item"><span>Nominal</span><strong id="inv-nominal">-</strong></div>
+                            <div class="invoice-item"><span>Pembayaran</span><strong id="inv-payment">-</strong></div>
+                            <div class="invoice-item"><span>Tanggal</span><strong id="inv-date">-</strong></div>
+                        </div>
+
+                        <button id="btn-reset" class="btn btn-primary">Top Up Lagi</button>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-container container">
+            <div class="footer-info">
+                <a href="#" class="footer-logo">Ibrahim TopUp</a>
+                <p>Platform terpercaya untuk pembelian mata uang digital game dengan transaksi instan dan aman terproteksi.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#game-section">Game</a></li>
+                    <li><a href="#features-section">Promo</a></li>
+                    <li><a href="#footer">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ibrahim TopUp. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="TopUp.js"></script>
+</body>
+</html>
